@@ -1,21 +1,10 @@
 {
 	"root": true,
-	"extends": [
-		"eslint:recommended",
-		"plugin:prettier/recommended",
-		"plugin:react-hooks/recommended",
-		"plugin:import/recommended",
-		"prettier"
-	],
-	"plugins": ["react-hooks", "prettier", "typescript", "jsx"],
+	"extends": ["prettier"],
+	"plugins": ["prettier"],
 	"rules": {
 		"import/no-unresolved": 0,
-		"import/first": "error",
-		"import/newline-after-import": "error",
-		"import/no-duplicates": "error",
 		"react/react-in-jsx-scope": "off",
-		"react-hooks/rules-of-hooks": "error",
-		"react-hooks/exhaustive-deps": "warn",
 		"react/prop-types": "warn",
 		"react/no-unknown-property": "warn"
 	},

@@ -16,8 +16,7 @@ const useScript = (script = {
     var _script$callbacks, _script$callbacks2;
     if (forcedStatus) {
       setStatus(forcedStatus);
-      return () => {
-      };
+      return () => {};
     }
     if (!script.src) {
       setStatus('idle');
@@ -66,8 +65,7 @@ const useScript = (script = {
         scriptToAdd.removeEventListener('error', setStateFromEvent);
       }
     };
-  },
-  [script, forcedStatus, status]);
+  }, [script, forcedStatus, status]);
   return status;
 };
 
@@ -146,9 +144,7 @@ const createOverlay = ({
       this.pane = _pane;
       this.position = position;
     }
-
   }
-
   return new Overlay(container, pane, position);
 };
 createOverlay.propTypes = {
@@ -182,7 +178,6 @@ const OverlayView = ({
       maps
     });
   }, [container, maps, _pane, position]);
-
   const childrenProps = useMemoCompare(children === null || children === void 0 ? void 0 : children.props, (prev, next) => {
     return prev && prev.lat === next.lat && prev.lng === next.lng;
   });
@@ -194,7 +189,6 @@ const OverlayView = ({
       };
     }
   }, [map, childrenProps]);
-
   useEffect(() => {
     container.style.zIndex = `${zIndex}`;
   }, [zIndex, container]);
@@ -229,7 +223,6 @@ const MapMarkers = ({
           lng: child.props.lng
         };
         const zIndex = child.props.zIndex || undefined;
-
         return /*#__PURE__*/React.createElement(OverlayView, {
           position: latLng,
           map: map,
